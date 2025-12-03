@@ -1,0 +1,7 @@
+﻿services:
+  awhellnah.ticketservice:
+    image: awhellnah.ticketservice
+    build:
+      context: .
+      dockerfile: AwHellNah.TicketService/Dockerfile
+
