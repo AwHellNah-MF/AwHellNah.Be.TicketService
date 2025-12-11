@@ -4,3 +4,6 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 .idea
+AwHellNah.Be.TicketService.sln.DotSettings.user
+.DS_Store
+AwHellNah.TicketService/appsettings.Development.json

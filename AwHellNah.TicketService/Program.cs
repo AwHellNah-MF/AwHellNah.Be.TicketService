@@ -1,4 +1,15 @@
+using AwHellNah.TicketService.Domain;
+using AwHellNah.TicketService.Driven;
+using AwHellNah.TicketService.Driving;
+using Frametux.Shared.Core;
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSharedCore(typeof(Program).Assembly);
+builder.Services.AddDriven(builder.Configuration);
+builder.Services.AddDomain();
+builder.Services.AddDriving();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -10,8 +21,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
+
+app.UseDriving();
 
 app.Run();
